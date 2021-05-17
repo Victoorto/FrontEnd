@@ -1,0 +1,18 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div clas="container-fluid">
+      <div class="row">
+
+        <div *ngFor='let tempCar of Cars' class = "col-md-3">
+
+          <div class="product-box">
+            <img src="{{tempCar.img_url}}" class="img-responsive" height="100">
+            <h3>{{tempCar.model}} | {{tempCar.brand}}</h3>
+            <div class="price">{{tempCar.price | currency: 'MXN'}}</div>
+            <a href="#" class="primary-btn">See availability</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

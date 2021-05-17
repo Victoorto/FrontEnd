@@ -4,6 +4,9 @@ export class Car {
     brand:string ;
     color:string ;
     plate:string ;
-    year: number ;   
+    year: number ; 
+    img_url: string;  
+    price: number;
+    car_type: string;
 
 }

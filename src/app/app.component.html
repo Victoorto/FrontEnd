@@ -1,9 +1,44 @@
-<div clas="container">
-  <h1 class="mt-3 mb-3">Cars</h1>
-  <p *ngFro='let tempCar of Cars'>
+<div clas="container fixed-top">
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid ">
+      <a class="navbar-brand">CarRental</a>
+      <a routerLink="/cars" routerLinkActive="active-link">All Cars</a>
+      <a routerLink="/car_type/sedan" routerLinkActive="active-link">Sedan</a>
+      <a routerLink="/car_type/suv" routerLinkActive="active-link">Suv</a>
+      <a routerLink="/car_type/pick-up" routerLinkActive="active-link">Pick-Up</a>
+      <a href="#">Reservation</a>
+  
+      <form class="row g-3">
+      
+        <div class="col-auto">
+          <label for="inputPassword2" class="visually-hidden">Search</label>
+          <input type="password" class="form-control" id="inputPassword2" placeholder="Search">
+        </div>
+        <div class="col-auto">
+          <button type="submit" class="btn btn-primary mb-3">Search</button>
+        </div>
+      </form>
+     
+    </div>
+  </nav>
 
-    {{tempCar.name}}: {{tempCar.brand}}     
-  </p> 
+
+<router-outlet></router-outlet>
+ <!--<app-car-list></app-car-list>-->
+
+
+<footer>
+<div class="container">
+  <div class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+          <a href="#">About Us</a>
+          <a href="#">Contact Us</a>
+          <a href="#">Help</a>
+    </div>
+  </div>
+</div>
+</footer>
+
  
  
 </div>

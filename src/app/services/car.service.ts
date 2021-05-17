@@ -9,24 +9,24 @@ import { map } from 'rxjs/operators';
 })
 export class CarService {
 
-  private baseUrl = "http://localhost:8080/api/cars";
+  private baseUrl = 'http://localhost:8080/api/cars/';
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-  getCars(): Observable<any>{
-    return this.httpClient.get(`${this.baseUrl}`);
-  }
-/*
-  public getCarList(): Observable<Car[]> {
-    return this.httpClient.get<GetResponse>(this.baseUrl).pipe(
-      map(response => response._embedded.Cars)
+  public getCarList(theCarType: String): Observable<Car[]> {
+
+//Need to build URL based on car type
+const searchUrl = `${this.baseUrl}search/findByCarType?si=${theCarType}`;
+
+    return this.http.get<GetResponse>(searchUrl).pipe(
+      map(response => response._embedded.cars)
     );
   }
 }
-/*
+
 interface GetResponse{
   _embedded: {
-    Cars: Car[];
-  }*/
+    cars: Car[];
+  }
 }
